@@ -3,18 +3,18 @@
 <head>
 	<title>jQuery JSON Forms Fields</title>
 	
-	<script type="text/javascript" src="jquery-2.1.1.js"></script>
-	<script type="text/javascript" src="jquery-json-form-binding.js"></script>
+	<script type="text/javascript" src="src/jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="src/jquery-json-form-binding.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function(){
 
-			$("#myform").jsonToForm({ 
-				data: {name: "Waleed", age: 23, gender: "Male"},
-				callbacks: {
-					age: function(value){
-						$('[name="age"]').val(value);
-					}
+			var json = {name: "Waleed", age: 23, gender: "Male"};
+
+			$("#myform").jsonToForm(json,
+			{ 
+				age: function(value){
+					$('[name="age"]').val(value);
 				}
 
 			});
