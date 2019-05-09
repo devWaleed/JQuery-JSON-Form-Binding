@@ -1,6 +1,6 @@
 {
   "name": "jquery-json-form-binding",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A light weight plugin for binding JSON data to forms. Useful for working with AJAX and forms with large number of fields",
   "main": "index.js",
   "scripts": {
