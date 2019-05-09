@@ -1,0 +1,24 @@
+{
+  "name": "jquery-json-form-binding",
+  "version": "1.0.0",
+  "description": "A light weight plugin for binding JSON data to forms. Useful for working with AJAX and forms with large number of fields",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devWaleed/JQuery-JSON-Form-Binding.git"
+  },
+  "keywords": [
+    "jquery",
+    "json",
+    "forms"
+  ],
+  "author": "Waleed Baig aka devWaleed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devWaleed/JQuery-JSON-Form-Binding/issues"
+  },
+  "homepage": "https://github.com/devWaleed/JQuery-JSON-Form-Binding#readme"
+}
