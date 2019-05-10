@@ -1,12 +1,12 @@
-# JQuery-JSON-Form-Fields v 1.2 (UPDATED)
+# JQuery-JSON-Form-Fields
 A light weight plugin for binding JSON data to forms. Useful for working with AJAX and forms with large number of fields.
 
-## Installation
+### Installation
 
 ```npm i jquery-json-form-binding```
 
    or link 'jquery-json-form-binding.js' from src folder
-## Usage
+### Usage
 Its fairly simple to use. Make a form and call jsonToForm function on it passing json data and your call back as options. 
 
 A simple form:
@@ -42,4 +42,4 @@ var data = {name: "Waleed", age: 23, gender: "Male"};
 	});
 ```
 
-### Suggestions and contributions will be appreciated.
+##### Suggestions and contributions will be appreciated.
