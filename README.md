@@ -37,7 +37,7 @@ A form multi select:
 		
 		<input type="" name="name">
 
-		<select multiple name="skil[]">
+		<select multiple name="skill[]">
 			<option value="html">html</option>
 			<option value="css">css</option>
 			<option value="javascript">javascript</option>
