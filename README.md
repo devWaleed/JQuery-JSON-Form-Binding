@@ -30,7 +30,7 @@ Now call jsonToForm with JSON object.
 	$("#myform").jsonToForm(data);
 ```
 
-A form multi select:
+A form with multi select:
 
 ```
 	<form id="myform">
