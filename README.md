@@ -35,14 +35,24 @@ A form with multi select:
 ```
 	<form id="myform">
 		
-		<input type="" name="name">
+		<div class="form-field">
+			<input type="" name="name">
+		</div>
 
-		<select multiple name="skill[]">
-			<option value="html">html</option>
-			<option value="css">css</option>
-			<option value="javascript">javascript</option>
-			<option value="node">node</option>
-		</select>
+		<div class="form-field">
+			<label><input type="checkbox" value="english" name="language[]"/>English</label>
+			<label><input type="checkbox" value="french" name="language[]" />French</label>
+			<label><input type="checkbox" value="german" name="language[]" />German</label>
+		</div>
+
+		<div class="form-field">
+			<select multiple name="skill[]">
+				<option value="html">html</option>
+				<option value="css">css</option>
+				<option value="javascript">javascript</option>
+				<option value="node">node</option>
+			</select>
+		</div>
 
 	</form>
 ```
