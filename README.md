@@ -30,6 +30,41 @@ Now call jsonToForm with JSON object.
 	$("#myform").jsonToForm(data);
 ```
 
+A form with multi select:
+
+```
+	<form id="myform">
+		
+		<div class="form-field">
+			<input type="" name="name">
+		</div>
+
+		<div class="form-field">
+			<label><input type="checkbox" value="english" name="language[]"/>English</label>
+			<label><input type="checkbox" value="french" name="language[]" />French</label>
+			<label><input type="checkbox" value="german" name="language[]" />German</label>
+		</div>
+
+		<div class="form-field">
+			<select multiple name="skill[]">
+				<option value="html">html</option>
+				<option value="css">css</option>
+				<option value="javascript">javascript</option>
+				<option value="node">node</option>
+			</select>
+		</div>
+
+	</form>
+```
+
+Now call jsonToForm with JSON object.
+
+```
+	var data = {name: "Waleed", skill: ["html", "css"], language: ["english", "german"]};
+	$("#myform").jsonToForm(data);
+```
+[Demo](https://jsfiddle.net/sesubash/qmf9djuk/) for multiple selection.
+
 If you have a complex form. You can use pass callback functions for each data key you have in your data object like this:
 
 ```

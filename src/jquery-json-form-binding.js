@@ -17,9 +17,17 @@ $.fn.jsonToForm = function (data, callbacks) {
                 options.callbacks[k](v);
 
             } else {
-
-                $('[name="' + k + '"]', formInstance).val(v);
-
+                // set values to multi selectable form elements like select/checkbox if value is array
+                if (Array.isArray(v)) {
+                    var el = $('[name="' + k + '[]"]', formInstance);
+                    if (el.length) {
+                        el.val(v);
+                    } else {
+                        console.error('Invalid values passed');
+                    }
+                } else {
+                    $('[name="' + k + '"]', formInstance).val(v);
+                }
             }
 
         });
