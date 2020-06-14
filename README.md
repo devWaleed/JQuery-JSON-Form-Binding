@@ -35,9 +35,27 @@ A form with multi select:
 ```
 	<form id="myform">
 		<div class="form-field">
+			<h5>
+				Text Input
+			</h5>
 			<input type="" name="name">
 		</div>
+
 		<div class="form-field">
+			<h5>
+				Single Select
+			</h5>
+			<select name="country">
+				<option value="usa">USA</option>
+				<option value="uk">UK</option>
+				<option value="germany">Germany</option>
+			</select>
+		</div>
+
+		<div class="form-field">
+			<h5>
+				Multiple Select
+			</h5>
 			<select multiple name="skill">
 				<option value="html">html</option>
 				<option value="css">css</option>
@@ -76,9 +94,10 @@ Now call jsonToForm with JSON object.
 ```
 	var json = {
 		name: "Waleed",
-		skill: ["html", "css"],
-		language: ["english", "french"],
-		sex: "male"
+		country: "uk",
+		skill: ["html", "javascript"],
+		language: ["english", "german"],
+		sex: "female"
 	};
 
 	$("#myform").jsonToForm(json);
