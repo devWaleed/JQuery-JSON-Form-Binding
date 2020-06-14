@@ -4,20 +4,21 @@
 	<title>jQuery JSON Forms Fields</title>
 	
 	<script type="text/javascript" src="src/jquery-2.1.1.js"></script>
-	<script type="text/javascript" src="src/jquery-json-form-binding.js"></script>
+	<script type="text/javascript" src="src/jquery-json-form-binding.min.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function(){
 
-			var json = {name: "Waleed", age: 23, gender: "Male"};
+			var json = {
+				name: "Waleed",
+				skill: ["html", "css"],
+				language: ["english", "french"],
+				sex: "male"
+			};
 
-			$("#myform").jsonToForm(json,
-			{ 
-				age: function(value){
-					$('[name="age"]').val(value);
-				}
-
-			});
+			$("#myform").jsonToForm(json);
+			
+			console.log($("#myform").serialize());
 
 		});
 	</script>
@@ -26,14 +27,42 @@
 <body>
 
 	<form id="myform">
-		
-		<input type="" name="name">
+		<div class="form-field">
+			<input type="" name="name">
+		</div>
+		<div class="form-field">
+			<select multiple name="skill">
+				<option value="html">html</option>
+				<option value="css">css</option>
+				<option value="javascript">javascript</option>
+				<option value="node">node</option>
+			</select>
+		</div>
 
-		<input type="" name="age">
+		<div class="form-field">
+			<h5>
+				checkbox example
+			</h5>
+			<label>
+				<input type="checkbox" value="english" name="language" />English</label>
+			<label>
+				<input type="checkbox" value="french" name="language" />French</label>
+			<label>
+				<input type="checkbox" value="german" name="language" />German</label>
+		</div>
 
-		<input type="" name="gender">
 
+		<div class="form-field">
+			<h5>
+				Radio example
+			</h5>
+			<label>
+				<input type="radio" value="male" name="sex" />Male</label>
+			<label>
+				<input type="radio" value="female" name="sex" />Female</label>
+		</div>
 	</form>
+
 
 </body>
 </html>

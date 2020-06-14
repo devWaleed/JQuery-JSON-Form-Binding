@@ -9,26 +9,38 @@ $.fn.jsonToForm = function (data, callbacks) {
 
     };
 
-    if (options.data != null) {
+     if (options.data != null) {
         $.each(options.data, function (k, v) {
 
+            var elements = $('[name="' + k + '"]', formInstance); 
+            
             if (options.callbacks != null && options.callbacks.hasOwnProperty(k)) {
 
                 options.callbacks[k](v);
 
-            } else {
-                // set values to multi selectable form elements like select/checkbox if value is array
-                if (Array.isArray(v)) {
-                    var el = $('[name="' + k + '[]"]', formInstance);
-                    if (el.length) {
-                        el.val(v);
+            } else if(elements.length || v.length) {
+                // check number of occurance of the element, 
+                // radio group / checkbox element will be having same name and hence multiple occurance will be there inside a form
+                $(elements).each(function (index, ele) {
+                    if (Array.isArray(v)) {
+                      v.forEach(function (val) {
+                        $(ele).is("select") // check if select control
+                          ? $(ele)
+                              .find("[value='" + val + "']")
+                              .prop("selected", true) // select option if select control
+                          : $(ele).val() == val
+                          ? $(ele).prop("checked", true) // mark as checked if radio or checkbox
+                          : "";
+                      });
                     } else {
-                        console.error('Invalid values passed');
+                      $(ele).val() == v ? $(ele).prop("checked", true) : "";
                     }
-                } else {
+                });
+           
+                    
+            } else {
                     $('[name="' + k + '"]', formInstance).val(v);
                 }
-            }
 
         });
     }

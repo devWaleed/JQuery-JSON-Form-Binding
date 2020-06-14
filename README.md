@@ -34,19 +34,11 @@ A form with multi select:
 
 ```
 	<form id="myform">
-		
 		<div class="form-field">
 			<input type="" name="name">
 		</div>
-
 		<div class="form-field">
-			<label><input type="checkbox" value="english" name="language[]"/>English</label>
-			<label><input type="checkbox" value="french" name="language[]" />French</label>
-			<label><input type="checkbox" value="german" name="language[]" />German</label>
-		</div>
-
-		<div class="form-field">
-			<select multiple name="skill[]">
+			<select multiple name="skill">
 				<option value="html">html</option>
 				<option value="css">css</option>
 				<option value="javascript">javascript</option>
@@ -54,14 +46,44 @@ A form with multi select:
 			</select>
 		</div>
 
+		<div class="form-field">
+			<h5>
+				checkbox example
+			</h5>
+			<label>
+				<input type="checkbox" value="english" name="language" />English</label>
+			<label>
+				<input type="checkbox" value="french" name="language" />French</label>
+			<label>
+				<input type="checkbox" value="german" name="language" />German</label>
+		</div>
+
+
+		<div class="form-field">
+			<h5>
+				Radio example
+			</h5>
+			<label>
+				<input type="radio" value="male" name="sex" />Male</label>
+			<label>
+				<input type="radio" value="female" name="sex" />Female</label>
+		</div>
 	</form>
 ```
 
 Now call jsonToForm with JSON object.
 
 ```
-	var data = {name: "Waleed", skill: ["html", "css"], language: ["english", "german"]};
-	$("#myform").jsonToForm(data);
+	var json = {
+		name: "Waleed",
+		skill: ["html", "css"],
+		language: ["english", "french"],
+		sex: "male"
+	};
+
+	$("#myform").jsonToForm(json);
+	
+	console.log($("#myform").serialize());
 ```
 [Demo](https://jsfiddle.net/sesubash/qmf9djuk/) for multiple selection.
 
