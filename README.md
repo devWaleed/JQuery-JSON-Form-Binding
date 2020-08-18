@@ -34,19 +34,29 @@ A form with multi select:
 
 ```
 	<form id="myform">
-		
 		<div class="form-field">
+			<h5>
+				Text Input
+			</h5>
 			<input type="" name="name">
 		</div>
 
 		<div class="form-field">
-			<label><input type="checkbox" value="english" name="language[]"/>English</label>
-			<label><input type="checkbox" value="french" name="language[]" />French</label>
-			<label><input type="checkbox" value="german" name="language[]" />German</label>
+			<h5>
+				Single Select
+			</h5>
+			<select name="country">
+				<option value="usa">USA</option>
+				<option value="uk">UK</option>
+				<option value="germany">Germany</option>
+			</select>
 		</div>
 
 		<div class="form-field">
-			<select multiple name="skill[]">
+			<h5>
+				Multiple Select
+			</h5>
+			<select multiple name="skill">
 				<option value="html">html</option>
 				<option value="css">css</option>
 				<option value="javascript">javascript</option>
@@ -54,14 +64,45 @@ A form with multi select:
 			</select>
 		</div>
 
+		<div class="form-field">
+			<h5>
+				checkbox example
+			</h5>
+			<label>
+				<input type="checkbox" value="english" name="language" />English</label>
+			<label>
+				<input type="checkbox" value="french" name="language" />French</label>
+			<label>
+				<input type="checkbox" value="german" name="language" />German</label>
+		</div>
+
+
+		<div class="form-field">
+			<h5>
+				Radio example
+			</h5>
+			<label>
+				<input type="radio" value="male" name="sex" />Male</label>
+			<label>
+				<input type="radio" value="female" name="sex" />Female</label>
+		</div>
 	</form>
 ```
 
 Now call jsonToForm with JSON object.
 
 ```
-	var data = {name: "Waleed", skill: ["html", "css"], language: ["english", "german"]};
-	$("#myform").jsonToForm(data);
+	var json = {
+		name: "Waleed",
+		country: "uk",
+		skill: ["html", "javascript"],
+		language: ["english", "german"],
+		sex: "female"
+	};
+
+	$("#myform").jsonToForm(json);
+	
+	console.log($("#myform").serialize());
 ```
 [Demo](https://jsfiddle.net/sesubash/qmf9djuk/) for multiple selection.
 
