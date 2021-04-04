@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>Example</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <br />
+      <h4>Basic Form</h4>
+
+      <form id="myform">
+        <table>
+          <tr>
+            <td>
+              <label>Name</label>
+            </td>
+            <td>
+              <input type="input" name="name" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Age</label>
+            </td>
+            <td>
+              <input type="input" name="age" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Gender</label>
+            </td>
+            <td>
+              <input type="input" name="gender" />
+            </td>
+          </tr>
+        </table>
+      </form>
+
+      <br />
+      <h4>Multi Select Form</h4>
+
+      <form id="myform-multiselect">
+        <div class="form-field">
+          <input type="" name="name" />
+        </div>
+
+        <div class="form-field">
+          <label
+            ><input
+              type="checkbox"
+              value="english"
+              name="language[]"
+            />English</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              value="french"
+              name="language[]"
+            />French</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              value="german"
+              name="language[]"
+            />German</label
+          >
+        </div>
+
+        <div class="form-field">
+          <select multiple name="skill[]">
+            <option value="html">html</option>
+            <option value="css">css</option>
+            <option value="javascript">javascript</option>
+            <option value="node">node</option>
+          </select>
+        </div>
+      </form>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="../src//jquery-json-form-binding.js"></script>
+    <script>
+      $(document).ready(function () {
+        var data = { name: "Waleed", age: 23, gender: "Male" };
+        $("#myform").jsonToForm(data);
+
+        var data2 = {
+          name: "Waleed",
+          skill: ["html", "css"],
+          language: ["english", "german"],
+        };
+        $("#myform-multiselect").jsonToForm(data2);
+      });
+    </script>
+  </body>
+</html>
