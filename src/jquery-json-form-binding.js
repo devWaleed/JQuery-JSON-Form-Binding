@@ -10,7 +10,7 @@ $.fn.jsonToForm = function (data, callbacks) {
     $.each(options.data, function (k, v) {
       var elements = $('[name^="' + k + '"]', formInstance);
 
-      if (options?.callbacks?.hasOwnProperty(k)) {
+      if (options.callbacks != null && options.callbacks.hasOwnProperty(k)) {
         options.callbacks[k](v);
         return;
       }
