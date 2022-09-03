@@ -1,5 +1,5 @@
-# (NOT MAINTAING ANYMORE)
-### I have moved to React/Vue apps.
+# !!! NOT MAINTAING ANYMORE !!!
+### I have moved to React/Vue apps. Unable to maintain this project any longer. Feel free to fork and use as you like.
 
 # JQuery-JSON-Form-Fields
 A light weight plugin for binding JSON data to forms. Useful for working with AJAX and forms with large number of fields.
